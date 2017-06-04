@@ -18,7 +18,7 @@ function setup(){
 	}
 
 	for(var i=0; i<numHerbivoros; i++){
-		herbivoros.push(new Herbivoro(random(10, largura-10), random(10, altura-10)));
+		herbivoros.push(new Herbivoro(random(10, largura-10), random(10, altura-10), 0, 0, 255), new Herbivoro(random(10, largura-10), random(10, altura-10), 255, 255, 0), new Herbivoro(random(10, largura-10), random(10, altura-10), 255, 0, 255));
 	}
 
 	popAtual = createP("");
@@ -34,6 +34,14 @@ function draw(){
 	popMax.html("População Máxima: "+maximoVidas);
 	if(maximoVidas < herbivoros.length){
 		maximoVidas = herbivoros.length;
+	}
+}
+
+function keyPressed(k){
+	if(keyCode == "32"){
+		for(var i=0; i<chunks.length; i++){
+			chunks[i].comida = 100;
+		}
 	}
 }
 

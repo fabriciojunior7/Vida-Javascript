@@ -1,4 +1,4 @@
-function Celula(x, y, tipo){
+function Celula(x, y, r, g, b, tipo){
 	//Atributos
 	this.x = x;
 	this.y = y;
@@ -9,6 +9,9 @@ function Celula(x, y, tipo){
 	this.velocidade = 1;
 	this.idade = 0;
 	this.tipo = tipo;
+	this.r = r;
+	this.g = g;
+	this.b = b;
 
 	this.campoLargura = 200;
 	this.campoAltura = 200;
@@ -26,7 +29,7 @@ function Celula(x, y, tipo){
 		//fill(255, 0, 0, 80);
 		//rect(this.campoX, this.campoY, this.campoLargura, this.campoAltura);
 
-		fill(50, 50, 255);
+		fill(this.r, this.g, this.b);
 		ellipse(this.x, this.y, this.largura, this.altura);
 	}
 

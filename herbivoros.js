@@ -1,6 +1,6 @@
-function Herbivoro(x, y){
+function Herbivoro(x, y, r, g, b){
 	//Atributos
-	Celula.call(this, x, y, 0);
+	Celula.call(this, x, y, r, g, b, 0);
 	this.chunkAtual = null;
 	this.chunkMeta = new Chunk(50, 50, 50, 50);
 	this.velocidadeX = random(-2, 2);
@@ -68,7 +68,7 @@ function Herbivoro(x, y){
 
 	this.reproduzir = function(){
 		this.energia = 50;
-		return(new Herbivoro(this.x+20, this.y))
+		return(new Herbivoro(this.x+20, this.y, this.r, this.g, this.b));
 	}
 
 }
